@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: k8netappcontainerregistry 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8netappcontainerregistry
+  template:
+    metadata:
+      labels:
+        app: k8netappcontainerregistry 
+    spec:
+      containers:
+        - name: k8netappcontainerregistry 
+          image: k8netappcontainerregistry.azurecr.io/k8netappcontainerregistry
+          ports:
+          - containerPort: 80
